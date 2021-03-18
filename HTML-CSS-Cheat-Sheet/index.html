@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <!--head-->
+    <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MC9CSTSNW6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MC9CSTSNW6');
+    </script>
+
+    <title>JAS0N HUANG</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="DoQOqkvX376V4rp4mmeGYFGrLOB-wrUCMMKlqgrqmuQ" />
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+    <script type="text/javascript">
+        let apiUrl = 'https://www.googleapis.com/youtube/v3/channels?part=snippet&id=UC9ckyA_A3MfXUa0ttxMoIZw&key=AIzaSyBiuF1WCpG7TaCY8xtd4cb73Sn-5NTPrb0'
+        let xhr = new XMLHttpRequest()
+        xhr.open('get', apiUrl, true)
+        xhr.send()
+
+        xhr.onreadystatechange = function(){
+            if(this.readyState ===4 && this.status === 200){
+                let data = JSON.parse(this.responseText)
+                console.log(data)
+            }
+        }
+    </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+
+    
+    <div class="container">
+        <div class="blog_header">
+    <a href="/">
+        <h1 class="blog_title">
+        <img src="/images/Jas0nhuang.svg" alt="jas0nhuang">
+        <!-- %= config.title %-->
+        </h1>
+    </a>
+
+    <div class="container">
+        <nav class="blog_nav">
+            
+                <a class="menu_item" href="/archives">文章</a>
+            
+                <a class="menu_item" href="/tags">標籤</a>
+            
+                <a class="menu_item" href="/about">關於</a>
+            
+                <a class="menu_item" href="/atom.xml">RSS</a>
+            
+        </nav>
+    </div>
+</div>
+
+    </div>
+    
+
+    
+    <div class="body">
+    <div class="main">
+<div class="full">
+    <h1 class="page_title">HTML &amp; CSS Cheat Sheet</h1>
+    <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p>&lt;title&gt;<br>(important for SEO)<br>&lt;link rel=”” type=”” href=””&gt;<br>(stylesheet, icon …)</p>
+<p>&lt;h1&gt; - &lt;h6&gt;<br>&lt;br /&gt;<br>&lt;hr /&gt;</p>
+<p>&lt;p&gt;<br>&lt;em&gt;<br>&lt;strong&gt;<br>&lt;img src=”” alt=”” /&gt;<br>&lt;a href=””&gt;</p>
+<p>&lt;table&gt;&lt;caption&gt;<br>    &lt;thead&gt;<br>        &lt;tr&gt;<br>            &lt;th&gt;<br>    &lt;tbody&gt;<br>        &lt;tr&gt;<br>            &lt;td&gt;<br>    &lt;tfoot&gt;<br>        &lt;tr&gt;<br>            &lt;td&gt;</p>
+<p>&lt;form action=”” method=””&gt;<br>    &lt;label&gt;<br>    &lt;input type=””&gt;<br>        (types: text, password, checkbox, radio, submit, color, date, file, range…)<br>    &lt;textarea&gt;</p>
+<p>&lt;div&gt;</p>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><p>selector:<br>    TAGNAME<br>    .CLASSNAME and #ID<br>    Pseudo classes:<br>        :first-child<br>        :nth-child(3n)</p>
+<p>properties:<br>    background: url(LINK)、rgba(0,0,0,0.5)<br>    backgournd-attachment: fixed;<br>    background-color:COLOR;</p>
+<pre><code>box model:
+    padding
+    border
+    margin
+
+border-radius:
+border-style:
+border-width: top, right, bottom, left;
+border-top-style:
+border-color:
+
+position: stative、relative、absolute、fixed
+display: block、inline-block、inline
+
+word-break:break-all
+word-wrap:break-word
+white-space:nowrap
+text-overflow:ellipsis
+overflow:hidden
+width:Xpx
+
+box shadow
+
+font:
+    font-family
+    color
+    font-weight
+
+line-height
+
+float: left, right
+clear: left, right</code></pre><p>flexbox<br>parent{<br>    display:flex;<br>    align-items:center、flex-start、flex-end; /* 垂直位置<br>    justify-content:center、space-around; /* 水平位置<br>    flex-wrap:nowrap、wrap;<br>}</p>
+<p>flex-grow<br>flex-shrink</p>
+
+    <hr>
+    
+    
+    
+</div>
+</div>
+
+
+    </div>
+
+    
+        <section id="comments">
+    <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'JAS0NHUANG';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+    
+    
+    <!--footer-->
+    <footer class="blog_footer">
+    <p>
+        JAS0N HUANG
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+            <img src="/images/cc.svg" alt="CC" height="16"></a>
+        2019
+    </p>
+    
+</footer>
+
+  </body>
+</html>
