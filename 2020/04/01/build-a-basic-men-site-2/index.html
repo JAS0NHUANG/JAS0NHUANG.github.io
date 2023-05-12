@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <!--head-->
+    <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MC9CSTSNW6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MC9CSTSNW6');
+    </script>
+
+    <title>JAS0N HUANG</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="DoQOqkvX376V4rp4mmeGYFGrLOB-wrUCMMKlqgrqmuQ" />
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+    <script type="text/javascript">
+        let apiUrl = 'https://www.googleapis.com/youtube/v3/channels?part=snippet&id=UC9ckyA_A3MfXUa0ttxMoIZw&key=AIzaSyBiuF1WCpG7TaCY8xtd4cb73Sn-5NTPrb0'
+        let xhr = new XMLHttpRequest()
+        xhr.open('get', apiUrl, true)
+        xhr.send()
+
+        xhr.onreadystatechange = function(){
+            if(this.readyState ===4 && this.status === 200){
+                let data = JSON.parse(this.responseText)
+                console.log(data)
+            }
+        }
+    </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+  <body>
+
+    
+    <div class="container">
+        <div class="blog_header">
+    <a href="/">
+        <h1 class="blog_title">
+        <img src="/images/Jas0nhuang.svg" alt="jas0nhuang">
+        <!-- %= config.title %-->
+        </h1>
+    </a>
+
+    <div class="container">
+        <nav class="blog_nav">
+            
+                <a class="menu_item" href="/archives">文章</a>
+            
+                <a class="menu_item" href="/tags">標籤</a>
+            
+                <a class="menu_item" href="/about">關於</a>
+            
+                <a class="menu_item" href="/atom.xml">RSS</a>
+            
+        </nav>
+    </div>
+</div>
+
+    </div>
+    
+
+    
+    <div class="body">
+    <div class="main">
+<div class="full">
+    <h1 class="page_title">Build a Basic M.E.N. Site - 2 - MongoDB Connection</h1>
+    <p>I set up the basic server in <a href="/2020/03/30/build-a-basic-men-site-1/">the previous article</a>, now we need to connect it to a database to store datas for the site.</p>
+<h2 id="Connect-to-MongoDB"><a href="#Connect-to-MongoDB" class="headerlink" title="Connect to MongoDB"></a>Connect to MongoDB</h2><h3 id="Use-your-Mongo-to-memorize"><a href="#Use-your-Mongo-to-memorize" class="headerlink" title="Use your Mongo to memorize"></a>Use your Mongo to memorize</h3><ol>
+<li><p>Install that Mongo</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install mongodb --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Connect to MongoDB through MongoClient</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const MongoClient = require(&quot;mongodb&quot;).MongoClient</span><br><span class="line"></span><br><span class="line">MongoClient.connect(&quot;LINK-TO-MONGODB&quot;, function(err, database) &#123;</span><br><span class="line">        /// ... start the server</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>Need a DB to connect to.<br>I will just follow the tutorial to create a DB on mLab. It is now aquiered by mongoDB Inc. and called MongoDB Atlas.<br>Create a user and it’s password, find the url to connect to the DB.<br>(I still have questions about the security since the user and password are all writen inside the server.js file. Seems like the security is done by granting different rights to different users, but not really clear for me now.)</p>
+</li>
+<li><p>Start server only when database is connected:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var db</span><br><span class="line"> </span><br><span class="line">MongoClient.connect(&quot;LINK-TO-MONGODB&quot;, function(err, client)&#123;</span><br><span class="line">         if (err) return console.log(err </span><br><span class="line">                 db = client.db(&quot;DBNAME&quot;)</span><br><span class="line">                     app.listen(3000, function()&#123;</span><br><span class="line">                                 console.log(&quot;listening on 3000&quot;)</span><br><span class="line">                                     &#125;) </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="Create-collection-to-store-stuff"><a href="#Create-collection-to-store-stuff" class="headerlink" title="Create collection to store stuff"></a>Create collection to store stuff</h3><ol>
+<li>Under the app.post method, specify a collection by calling db.collection() method. If the collection doesn’t exist then <code>db.collection()</code> function will create it.<br>After creating&#x2F;chosing the collection, we use <code>db.collection().insertOne()</code> function to CREATE(insert) data.<br>VERY IMPORTANT! We have throw a signal to tell the application to redirect to the root directory by useing <code>res.redirect()</code> so that the server knows that this action is finished:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">app.post(&quot;/plusorminus&quot;, function(req, res) &#123;</span><br><span class="line">    db.collection(&quot;plusorminus&quot;).insertOne(req.body,function(err, result)&#123; </span><br><span class="line">        if (err) return console.log(err) </span><br><span class="line">        res.redirect(&quot;/&quot;);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="Add-some-logic-to-handle-different-user-inputs"><a href="#Add-some-logic-to-handle-different-user-inputs" class="headerlink" title="Add some logic to handle different user inputs"></a>Add some logic to handle different user inputs</h3><ol>
+<li><p>Avoid duplication<br>Since I only want one vote for one user, I use <code>.findOne()</code> to look for an user name, and put the <code>.insertOne()</code> under an if&#x2F;else statement.<br>And the whole POST block will look like this:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if(user)&#123;</span><br><span class="line">    console.log(req.body.FacebookName + &quot; already exist.&quot;) </span><br><span class="line">    res.redirect(&quot;/&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>Check for empty entry:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if(req.body.FacebookName == &quot;&quot;)&#123;</span><br><span class="line">    console.log(&quot;Please enter your name.&quot;)</span><br><span class="line">    res.redirect(&quot;/&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Trim the TOO LONG NAME</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if (req.body.FacebookName.length &gt; 20)&#123;</span><br><span class="line">    req.body.FacebookName = req.body.FacebookName.substring(0,20)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>And the final <code>.post</code> section will look like this:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">app.post(&quot;/plusorminus&quot;,function(req, res)&#123;</span><br><span class="line">    db.collection(&quot;plusorminus&quot;).findOne(&#123;FacebookName:req.body.FacebookName&#125;, function(err, user)&#123;</span><br><span class="line">        console.log(req.body.FacebookName) </span><br><span class="line">        if(req.body.FacebookName == &quot;&quot;)&#123;</span><br><span class="line">            console.log(&quot;Please enter your name.&quot;)</span><br><span class="line">            res.redirect(&quot;/&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">        else if(user)&#123;</span><br><span class="line">            console.log(req.body.FacebookName + &quot; already exist!&quot;) </span><br><span class="line">            res.redirect(&quot;/&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;</span><br><span class="line">            if (req.body.FacebookName.length &gt; 20)&#123;</span><br><span class="line">                req.body.FacebookName = req.body.FacebookName.substring(0,20)</span><br><span class="line">            &#125;</span><br><span class="line">            db.collection(&quot;plusorminus&quot;).insertOne(req.body, function(err, result)&#123;</span><br><span class="line">                if (err) return console.log(err)</span><br><span class="line">                res.redirect(&quot;/&quot;)</span><br><span class="line">                console.log(&quot;Thank you for your vote!&quot;) </span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>Here is a web site with a simple CREATE(input) functionality. Next we will look at <a href="/2020/04/05/build-a-basic-men-site-3/">how to READ data from the database and show them to the users</a>.</p>
+
+    <hr>
+    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Express/" rel="tag">Express</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/" rel="tag">MongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJS/" rel="tag">NodeJS</a></li></ul>
+    
+    
+</div>
+</div>
+
+
+    </div>
+
+    
+        <section id="comments">
+    <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'JAS0NHUANG';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+    
+    
+    <!--footer-->
+    <footer class="blog_footer">
+    <p>
+        JAS0N HUANG
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+            <img src="/images/cc.svg" alt="CC" height="16"></a>
+        2019
+    </p>
+    
+</footer>
+
+  </body>
+</html>

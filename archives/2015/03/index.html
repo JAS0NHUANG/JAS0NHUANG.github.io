@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <!--head-->
+    <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MC9CSTSNW6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MC9CSTSNW6');
+    </script>
+
+    <title>JAS0N HUANG</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="DoQOqkvX376V4rp4mmeGYFGrLOB-wrUCMMKlqgrqmuQ" />
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+    <script type="text/javascript">
+        let apiUrl = 'https://www.googleapis.com/youtube/v3/channels?part=snippet&id=UC9ckyA_A3MfXUa0ttxMoIZw&key=AIzaSyBiuF1WCpG7TaCY8xtd4cb73Sn-5NTPrb0'
+        let xhr = new XMLHttpRequest()
+        xhr.open('get', apiUrl, true)
+        xhr.send()
+
+        xhr.onreadystatechange = function(){
+            if(this.readyState ===4 && this.status === 200){
+                let data = JSON.parse(this.responseText)
+                console.log(data)
+            }
+        }
+    </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+  <body>
+
+    
+    <div class="container">
+        <div class="blog_header">
+    <a href="/">
+        <h1 class="blog_title">
+        <img src="/images/Jas0nhuang.svg" alt="jas0nhuang">
+        <!-- %= config.title %-->
+        </h1>
+    </a>
+
+    <div class="container">
+        <nav class="blog_nav">
+            
+                <a class="menu_item" href="/archives">文章</a>
+            
+                <a class="menu_item" href="/tags">標籤</a>
+            
+                <a class="menu_item" href="/about">關於</a>
+            
+                <a class="menu_item" href="/atom.xml">RSS</a>
+            
+        </nav>
+    </div>
+</div>
+
+    </div>
+    
+
+    
+    <div class="body">
+    <div class="main">
+<h1 class="page_title">文章</h1>
+
+    <a href="/2015/03/08/vim-02-normal-hero/">
+    <div class="archive_title">
+        <span class="date">2015-03-08</span>
+        <span class="title">Vim - 02 - 九條好漢在「一般」</span>
+    </div>
+</a>
+
+
+    <a href="/2015/03/07/vim-01-first-step/">
+    <div class="archive_title">
+        <span class="date">2015-03-07</span>
+        <span class="title">Vim - 01 - 跨出第一步</span>
+    </div>
+</a>
+
+
+</div>
+
+    </div>
+
+    
+    
+    <!--footer-->
+    <footer class="blog_footer">
+    <p>
+        JAS0N HUANG
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+            <img src="/images/cc.svg" alt="CC" height="16"></a>
+        2019
+    </p>
+    
+</footer>
+
+  </body>
+</html>

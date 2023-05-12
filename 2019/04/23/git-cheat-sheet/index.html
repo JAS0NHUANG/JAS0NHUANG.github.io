@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <!--head-->
+    <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MC9CSTSNW6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MC9CSTSNW6');
+    </script>
+
+    <title>JAS0N HUANG</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="DoQOqkvX376V4rp4mmeGYFGrLOB-wrUCMMKlqgrqmuQ" />
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+    <script type="text/javascript">
+        let apiUrl = 'https://www.googleapis.com/youtube/v3/channels?part=snippet&id=UC9ckyA_A3MfXUa0ttxMoIZw&key=AIzaSyBiuF1WCpG7TaCY8xtd4cb73Sn-5NTPrb0'
+        let xhr = new XMLHttpRequest()
+        xhr.open('get', apiUrl, true)
+        xhr.send()
+
+        xhr.onreadystatechange = function(){
+            if(this.readyState ===4 && this.status === 200){
+                let data = JSON.parse(this.responseText)
+                console.log(data)
+            }
+        }
+    </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+  <body>
+
+    
+    <div class="container">
+        <div class="blog_header">
+    <a href="/">
+        <h1 class="blog_title">
+        <img src="/images/Jas0nhuang.svg" alt="jas0nhuang">
+        <!-- %= config.title %-->
+        </h1>
+    </a>
+
+    <div class="container">
+        <nav class="blog_nav">
+            
+                <a class="menu_item" href="/archives">文章</a>
+            
+                <a class="menu_item" href="/tags">標籤</a>
+            
+                <a class="menu_item" href="/about">關於</a>
+            
+                <a class="menu_item" href="/atom.xml">RSS</a>
+            
+        </nav>
+    </div>
+</div>
+
+    </div>
+    
+
+    
+    <div class="body">
+    <div class="main">
+<div class="full">
+    <h1 class="page_title">猴子學 Git 小抄</h1>
+    <h2 id="一"><a href="#一" class="headerlink" title="(一)"></a>(一)</h2><ul>
+<li>官網下載連結： <a target="_blank" rel="noopener" href="http://git-scm.com/downloads"><img src="/images/GITlogo.png" alt="git logo"></a></li>
+<li>初始化式程庫(init)<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init &quot;資料夾路徑&quot;</span><br><span class="line">cd &quot;資料夾路徑&quot;</span><br></pre></td></tr></table></figure></li>
+<li>加入(add)<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add &quot;檔案名稱&quot;  #加入特定檔案</span><br><span class="line">git add *           #加入所有新增或已修改檔案</span><br></pre></td></tr></table></figure></li>
+<li>提交(commit)<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git commit</span><br></pre></td></tr></table></figure></li>
+<li>移除(rm)<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git rm &quot;檔案名稱&quot;           #取消追踨並刪除檔案</span><br><span class="line">git rm --cached &quot;檔案名稱&quot;  #取消追踨但保留檔案</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="二"><a href="#二" class="headerlink" title="(二)"></a>(二)</h2><ul>
+<li><p>遠端操作(remote)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git remote add origin REMOTE_REPO_ADDR #設定遠端程式庫位址</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>推送(push)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git push origin master #推送至遠端</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>擷取(fetch)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git fetch origin master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>合併(merge)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git merge master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>擷取合併(pull)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>複製(clone)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone REMOTE_REPO_ADDR</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+    <hr>
+    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cheat-Sheet/" rel="tag">Cheat Sheet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li></ul>
+    
+    
+</div>
+</div>
+
+
+    </div>
+
+    
+        <section id="comments">
+    <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'JAS0NHUANG';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+    
+    
+    <!--footer-->
+    <footer class="blog_footer">
+    <p>
+        JAS0N HUANG
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+            <img src="/images/cc.svg" alt="CC" height="16"></a>
+        2019
+    </p>
+    
+</footer>
+
+  </body>
+</html>

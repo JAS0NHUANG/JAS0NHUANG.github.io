@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <!--head-->
+    <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MC9CSTSNW6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MC9CSTSNW6');
+    </script>
+
+    <title>JAS0N HUANG</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="DoQOqkvX376V4rp4mmeGYFGrLOB-wrUCMMKlqgrqmuQ" />
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+    <script type="text/javascript">
+        let apiUrl = 'https://www.googleapis.com/youtube/v3/channels?part=snippet&id=UC9ckyA_A3MfXUa0ttxMoIZw&key=AIzaSyBiuF1WCpG7TaCY8xtd4cb73Sn-5NTPrb0'
+        let xhr = new XMLHttpRequest()
+        xhr.open('get', apiUrl, true)
+        xhr.send()
+
+        xhr.onreadystatechange = function(){
+            if(this.readyState ===4 && this.status === 200){
+                let data = JSON.parse(this.responseText)
+                console.log(data)
+            }
+        }
+    </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+  <body>
+
+    
+    <div class="container">
+        <div class="blog_header">
+    <a href="/">
+        <h1 class="blog_title">
+        <img src="/images/Jas0nhuang.svg" alt="jas0nhuang">
+        <!-- %= config.title %-->
+        </h1>
+    </a>
+
+    <div class="container">
+        <nav class="blog_nav">
+            
+                <a class="menu_item" href="/archives">文章</a>
+            
+                <a class="menu_item" href="/tags">標籤</a>
+            
+                <a class="menu_item" href="/about">關於</a>
+            
+                <a class="menu_item" href="/atom.xml">RSS</a>
+            
+        </nav>
+    </div>
+</div>
+
+    </div>
+    
+
+    
+    <div class="body">
+    <div class="main">
+<div class="full">
+    <h1 class="page_title">Learn JavaScript Properly 1-1 Introduction</h1>
+    <p>Notes taken when following <a target="_blank" rel="noopener" href="http://javascriptissexy.com/how-to-learn-javascript-properly/#StudyGuideforBeginners-2">THIS</a> guide.(01&#x2F;24&#x2F;2020 update: Some times the site doesn’t work.)</p>
+<h2 id="Learn-some-html-amp-css"><a href="#Learn-some-html-amp-css" class="headerlink" title="Learn some html &amp; css."></a>Learn some html &amp; css.</h2><h2 id="Make-a-simple-web-site"><a href="#Make-a-simple-web-site" class="headerlink" title="Make a simple web site."></a>Make a simple web site.</h2><h2 id="Read-“Beginning-JavaScript”-chapter-1"><a href="#Read-“Beginning-JavaScript”-chapter-1" class="headerlink" title="Read “Beginning JavaScript” chapter 1"></a>Read “Beginning JavaScript” chapter 1</h2><h3 id="What-is-javascript"><a href="#What-is-javascript" class="headerlink" title="What is javascript?"></a>What is javascript?</h3><p>It’s a “computer programming language”. WoW!<br>It’s an “interpreted language” rather than a “compiled language”.<br>Nothing to do with “java” language.  </p>
+<p>Javascript runs in browser with interpreters witch can also be used in other “hosts”.<br>But need to be careful with different browsers.<br>Standards set by w3c<br>(Require some web working fondamental concepts. Like web server, http, client, ip addresse, DNS…etc)  </p>
+<h3 id="Why-learn-js"><a href="#Why-learn-js" class="headerlink" title="Why learn js"></a>Why learn js</h3><ul>
+<li>it’s widely used and available.</li>
+<li>it’s versatile(polyvalant).</li>
+</ul>
+<p>JavaScript can do lots of things!  </p>
+<h3 id="Tools-needed-to-javascript-development"><a href="#Tools-needed-to-javascript-development" class="headerlink" title="Tools needed to javascript development"></a>Tools needed to javascript development</h3><ul>
+<li>a text editor</li>
+<li>a modern browser</li>
+</ul>
+<h3 id="The-scripts-go-to-…"><a href="#The-scripts-go-to-…" class="headerlink" title="The scripts go to …"></a>The scripts go to …</h3><p>since major browsers use javascript as default scripting language. <code>&lt;script&gt;</code> tag (without <code>type</code>) is enough. However use of the <code>type</code> attribute is “mandatory” according to w3c standards.<br>But no need to add <code>text</code> attribute.</p>
+<p>linking to an external js file by adding :</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src= &quot;the.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>advantages of linking!  </p>
+<ul>
+<li>code reuse. also easyer for maintanence.</li>
+<li>make it “cacheable”!</li>
+</ul>
+<h3 id="Here-comes-the-first-program"><a href="#Here-comes-the-first-program" class="headerlink" title="Here comes the first program"></a>Here comes the first program</h3><p>you can put <code>&lt;script&gt;</code> where ever you want in a file. but it’s better make it inside the <code>&lt;head&gt;</code> or the <code>&lt;body&gt;</code>.<br>it’s also better to always specify the “type” attribute like:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>then finally the first page with javascript:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;body bgcolor=&quot;white&quot;&gt;</span><br><span class="line">        &lt;p&gt;paragraph 1&lt;/p&gt;</span><br><span class="line">        &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">            document.bgcolor = &quot;red&quot;;</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>document</code> refers to the web page “document”.</li>
+<li><code>bgcolor</code> sets the background color.</li>
+<li><code>;</code> is used to indicate the end of a “statement”.</li>
+<li>“parsing” &#x3D; gramatical analysis &#x3D; read through the code and execute them.</li>
+</ul>
+<p><strong>The “parsing” of a web page:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body bgcolor=&quot;white&quot;&gt;</span><br><span class="line">    &lt;p&gt;paragraph 1&lt;/p&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">        //a comment for first script block.</span><br><span class="line">        alert(&quot;first script block&quot;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;p&gt;paragraph 2&lt;/p&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">        document.bgcolor = &quot;red&quot;;</span><br><span class="line">        alert(&quot;second script block&quot;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;p&gt;paragraph 3&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>(if it doesn’t work it might be a probleme because of copying directly from pdf. replace <code>&quot;</code> by <code>&quot;</code> to fix it.)  </p>
+<ul>
+<li><code>//</code> is to use for comment.</li>
+<li><code>alert()</code> is a function (function &#x3D; pieces of js code. it takes some information, processes it, and gives a result.) that “alert” or “inform” the user by displaying message box. the message to be dissplay is given in the “()” as <em>parameter</em>.</li>
+<li>the <code>alert()</code> function is a <em>modal</em>. it means that the <em>parsing</em> of the page stops (brought to a halt) when <code>alert()</code> function is used and doesn’t restart until the user closes the box.</li>
+<li>setting properties of the page: html &#x3D; static (set it once, cant change it); js &#x3D; dynamic(can change it all the time.)</li>
+</ul>
+<p><strong>so the use of javascript is to add some sort of intelligence or logic to the page, or to add special effects.</strong></p>
+<h3 id="Hello-some-“writtings”-to-the-page"><a href="#Hello-some-“writtings”-to-the-page" class="headerlink" title="Hello, some “writtings” to the page"></a>Hello, some “writtings” to the page</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!doctype html public &quot;-//w3c//dtd xhtml 1.0 transitional//en&quot;</span><br><span class="line">&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</span><br><span class="line">&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;</span><br><span class="line">&lt;body &gt;</span><br><span class="line">    &lt;p id=&quot;ResultsP&quot;&gt;&lt;/p&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    // Script block 1</span><br><span class="line">    document.getElementById(&#x27;ResultsP&#x27;).innerHTML = &#x27;Hello World!&#x27;;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>first three lines are to set the page as “xhtml”. Not that important.</li>
+<li>give an “id” to the <code>&lt;p&gt;</code> tag.</li>
+<li>get the element who’s id is XXX and set the content to “Hello World!”.</li>
+<li>the code <strong>should be after</strong> the paragraph that you want to set.</li>
+</ul>
+<h3 id="And-finally-some-“browser”-problems"><a href="#And-finally-some-“browser”-problems" class="headerlink" title="And finally some “browser” problems!"></a>And finally some “browser” problems!</h3><p>Let your page be backward compatible? or just let it “degrade gracefully”?<br>(degrade gracefully &#x3D; the page gives alert or still looks “OK” with older browsers.)</p>
+
+    <hr>
+    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+    
+    
+</div>
+</div>
+
+
+    </div>
+
+    
+        <section id="comments">
+    <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'JAS0NHUANG';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+    
+    
+    <!--footer-->
+    <footer class="blog_footer">
+    <p>
+        JAS0N HUANG
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+            <img src="/images/cc.svg" alt="CC" height="16"></a>
+        2019
+    </p>
+    
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <!--head-->
+    <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MC9CSTSNW6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MC9CSTSNW6');
+    </script>
+
+    <title>JAS0N HUANG</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="DoQOqkvX376V4rp4mmeGYFGrLOB-wrUCMMKlqgrqmuQ" />
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+    <script type="text/javascript">
+        let apiUrl = 'https://www.googleapis.com/youtube/v3/channels?part=snippet&id=UC9ckyA_A3MfXUa0ttxMoIZw&key=AIzaSyBiuF1WCpG7TaCY8xtd4cb73Sn-5NTPrb0'
+        let xhr = new XMLHttpRequest()
+        xhr.open('get', apiUrl, true)
+        xhr.send()
+
+        xhr.onreadystatechange = function(){
+            if(this.readyState ===4 && this.status === 200){
+                let data = JSON.parse(this.responseText)
+                console.log(data)
+            }
+        }
+    </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+  <body>
+
+    
+    <div class="container">
+        <div class="blog_header">
+    <a href="/">
+        <h1 class="blog_title">
+        <img src="/images/Jas0nhuang.svg" alt="jas0nhuang">
+        <!-- %= config.title %-->
+        </h1>
+    </a>
+
+    <div class="container">
+        <nav class="blog_nav">
+            
+                <a class="menu_item" href="/archives">文章</a>
+            
+                <a class="menu_item" href="/tags">標籤</a>
+            
+                <a class="menu_item" href="/about">關於</a>
+            
+                <a class="menu_item" href="/atom.xml">RSS</a>
+            
+        </nav>
+    </div>
+</div>
+
+    </div>
+    
+
+    
+    <div class="body">
+    <div class="main">
+<div class="full">
+    <h1 class="page_title">Build a Basic M.E.N. Site - 3 - Database to Front-end</h1>
+    <p>The server is up and running, the database is set and ready to collect information from the user.<br>Next we want to READ data from our database and show them to the user.</p>
+<h2 id="READ-data-from-MongoDB"><a href="#READ-data-from-MongoDB" class="headerlink" title="READ data from MongoDB"></a>READ data from MongoDB</h2><ol>
+<li><p>We want to GET data from the server&#x2F;database, so the request will be pout under the <code>.get()</code> method.<br>In MongoDB we can use <code>.find()</code> method to find documents inside a colletion.<br>This <code>.find()</code> method will return a cursor (a Mongo object) whitch contains informations of the documents that we want to find.<br>(try to console.log this cursor object?!)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">app.get(&quot;/&quot;, function(req, res)&#123;</span><br><span class="line">        var cursor = db.collection(&quot;plusorminus&quot;).find();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Use <code>.toArray()</code> method for this cursor object to put the informations inside an array.<br>The <code>.toArray()</code> method takes in a callback function. We can try <code>console.log()</code> the results.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cursor.toArray(function(err, results)&#123;</span><br><span class="line">    console.log(results)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Put in the actions that I want to do.<br>Count the choice of all user and <code>console.log()</code> out the counts.<br>The <code>.get()</code> section of code will now look like this:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">app.get(&quot;/&quot;, function(req, res)&#123;</span><br><span class="line">    res.sendFile(__dirname + &quot;/index.html&quot;)</span><br><span class="line"></span><br><span class="line">    var cursor = db.collection(&quot;plusorminus&quot;).find()</span><br><span class="line">    cursor.toArray(function(err, results)&#123;</span><br><span class="line">        if (err) return console.log(err)</span><br><span class="line">        var plus = 0</span><br><span class="line">        var minus = 0</span><br><span class="line">        for (i = 0; i &lt; results.length; i++)&#123;</span><br><span class="line">            if (results[i].plusorminus == &quot;+&quot;)&#123;</span><br><span class="line">                plus += 1</span><br><span class="line">            &#125;</span><br><span class="line">            else &#123;</span><br><span class="line">                minus += 1</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        console.log(&quot;plus: &quot; + plus)</span><br><span class="line">        console.log(&quot;minus: &quot; + minus)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Show-data-to-users-using-EJS"><a href="#Show-data-to-users-using-EJS" class="headerlink" title="Show data to users using EJS"></a>Show data to users using EJS</h2><p>We now have the data retrived from MongoDB and <code>console.log()</code> in the console. We should use a template engine to serve it to a HTML file.</p>
+<h3 id="Install-EJS-and-Edit-The-Server"><a href="#Install-EJS-and-Edit-The-Server" class="headerlink" title="Install EJS and Edit The Server"></a>Install EJS and Edit The Server</h3><ol>
+<li><p>Install EJS</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install ejs --save</span><br></pre></td></tr></table></figure>
+<p>set the <code>view engine</code> to <code>ejs</code> in NodeJS&#x2F;Express server by adding a line inside the <code>server.js</code> file.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">app.set(&quot;view engine&quot;, &quot;ejs&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Render the page with template.<br>The rendering is done by the <code>.render()</code> method under <code>response</code>, the syntax is:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">res.render(VIEW, DATA)</span><br></pre></td></tr></table></figure>
+<p>The VIEW is the file that we want to render (like XXX.ejs) and the DATA will be an object that passes data into the VIEW.<br>I want to latter render an <code>index.ejs</code> file and send the results to the web page. So I will add this line inside the <code>app.get()</code> section, and comment out the original <code>res.sendFile()</code> method:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">res.render(&quot;index.ejs&quot;, &#123;</span><br><span class="line">    results: results</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="Edit-EJS-File"><a href="#Edit-EJS-File" class="headerlink" title="Edit EJS File"></a>Edit EJS File</h3><ol>
+<li><p>Create the <code>views/</code> folder and the EJS file.<br>EJS will search automatically inside the <code>views/</code> folder for files that we want to render. So we can create a <code>views/</code> folder and an <code>index.ejs</code> file inside.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir views</span><br><span class="line">touch views/index.ejs</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Inside the EJS file<br>An EJS file is actually an HTML file in whitch we can write JavaScript code. So we can copy the content inside the <code>index.html</code> file and add the EJS part inside. The whole <code>index.ejs</code> file will look like this:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;MY APP&lt;/title&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/style.css&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;img src=&quot;/ covid19.svg&quot;&gt;</span><br><span class="line">    &lt;form action=&quot;/plusorminus&quot; method=&quot;POST&quot;&gt;</span><br><span class="line">        &lt;input name=&quot;FacebookName&quot; type=&quot;text&quot; placeholder=&quot;Your Name&quot;&gt;</span><br><span class="line">        &lt;span&gt; prophesy:&lt;/span&gt;</span><br><span class="line">        &lt;br&gt;</span><br><span class="line">        &lt;label value=&quot;21032020&quot;&gt;New cases on 06/04/2020 will be&lt;/label&gt;</span><br><span class="line">        &lt;br&gt;</span><br><span class="line">        &lt;input name=&quot;date&quot; type=&quot;hidden&quot; value=&quot;21032020&quot;&gt;</span><br><span class="line">        &lt;button class=&quot;plusbutton&quot; type=&quot;submit&quot; name=&quot;plusorminus&quot; value=&quot;+&quot;&gt;More&lt;/button&gt;</span><br><span class="line">        &lt;span&gt;/&lt;/span&gt;</span><br><span class="line">        &lt;button class=&quot;minusbutton&quot; type=&quot;submit&quot; name=&quot;plusorminus&quot; value=&quot;-&quot;&gt;Less&lt;/button&gt;</span><br><span class="line">        &lt;br&gt;</span><br><span class="line">        &lt;span&gt;then the new cases on 05/04/2020&lt;/span&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;hr&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;h2&gt;True Prophet?</span><br><span class="line">    &lt;br&gt;False Prophet?&lt;/h2&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;div class=&quot;plus&quot;&gt;</span><br><span class="line">        &lt;h3&gt; More&lt;/h3&gt;</span><br><span class="line">        &lt;ul&gt; </span><br><span class="line">            &lt;!-- EJS part --&gt;</span><br><span class="line">            &lt;% for(var i = 0; i &lt; results.length; i++)&#123; %&gt;</span><br><span class="line">                &lt;% if (results[i].plusorminus == &quot;+&quot;) &#123; %&gt;</span><br><span class="line">                    &lt;li class=&quot;user&quot;&gt;&lt;%= results[i].FacebookName %&gt;&lt;/span&gt;</span><br><span class="line">                &lt;% &#125; %&gt;</span><br><span class="line">            &lt;% &#125; %&gt;</span><br><span class="line">            &lt;!-- end of EJS part --&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;div class=&quot;minus&quot;&gt;</span><br><span class="line">        &lt;h3&gt; Less&lt;/h3&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">             &lt;!-- EJS part --&gt;</span><br><span class="line">             &lt;% for(var i = 0; i &lt; results.length; i++)&#123; %&gt;</span><br><span class="line">                 &lt;% if (results[i].plusorminus == &quot;-&quot;) &#123; %&gt;</span><br><span class="line">                    &lt;li class=&quot;user&quot;&gt;&lt;%= results[i].FacebookName %&gt;&lt;/span&gt;</span><br><span class="line">                &lt;% &#125; %&gt;</span><br><span class="line">            &lt;% &#125; %&gt;</span><br><span class="line">            &lt;!-- end of EJS part --&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>EJS’ syntax is quite simple. Use <code>&lt;% %&gt;</code> to write JavaScript inside. And <code>&lt;%= %&gt;</code> can output JavaScript’s result as string.<br>BTW, one little thing to be careful. The <code>&#125; else &#123;</code> statment should be put in the same <code>&lt;% %&gt;</code> tag. There will be an error if you separate <code>&#125;</code> and <code>else &#123;</code> to two lines. Examples:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// correct</span><br><span class="line">&lt;% &#125; else &#123; %&gt;</span><br><span class="line"></span><br><span class="line">// error</span><br><span class="line">&lt;% &#125; %&gt;</span><br><span class="line">&lt;% else &#123; %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Now we have a working server connect to a database. We are able to POST data to the server&#x2F;databse and GET data from the server&#x2F;database (both in a very basic stage ofcourse). But this page looks MXXXX FXXXXX ugly. <a href="/build-a-basic-men-site-4">Some styling will then be needed</a>.</p>
+
+    <hr>
+    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Express/" rel="tag">Express</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/" rel="tag">MongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJS/" rel="tag">NodeJS</a></li></ul>
+    
+    
+</div>
+</div>
+
+
+    </div>
+
+    
+        <section id="comments">
+    <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'JAS0NHUANG';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+    
+    
+    <!--footer-->
+    <footer class="blog_footer">
+    <p>
+        JAS0N HUANG
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+            <img src="/images/cc.svg" alt="CC" height="16"></a>
+        2019
+    </p>
+    
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <!--head-->
+    <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MC9CSTSNW6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MC9CSTSNW6');
+    </script>
+
+    <title>JAS0N HUANG</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="DoQOqkvX376V4rp4mmeGYFGrLOB-wrUCMMKlqgrqmuQ" />
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+    <script type="text/javascript">
+        let apiUrl = 'https://www.googleapis.com/youtube/v3/channels?part=snippet&id=UC9ckyA_A3MfXUa0ttxMoIZw&key=AIzaSyBiuF1WCpG7TaCY8xtd4cb73Sn-5NTPrb0'
+        let xhr = new XMLHttpRequest()
+        xhr.open('get', apiUrl, true)
+        xhr.send()
+
+        xhr.onreadystatechange = function(){
+            if(this.readyState ===4 && this.status === 200){
+                let data = JSON.parse(this.responseText)
+                console.log(data)
+            }
+        }
+    </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+  <body>
+
+    
+    <div class="container">
+        <div class="blog_header">
+    <a href="/">
+        <h1 class="blog_title">
+        <img src="/images/Jas0nhuang.svg" alt="jas0nhuang">
+        <!-- %= config.title %-->
+        </h1>
+    </a>
+
+    <div class="container">
+        <nav class="blog_nav">
+            
+                <a class="menu_item" href="/archives">文章</a>
+            
+                <a class="menu_item" href="/tags">標籤</a>
+            
+                <a class="menu_item" href="/about">關於</a>
+            
+                <a class="menu_item" href="/atom.xml">RSS</a>
+            
+        </nav>
+    </div>
+</div>
+
+    </div>
+    
+
+    
+    <div class="body">
+    <div class="main">
+<div class="full">
+    <h1 class="page_title">Vim - 01 - 跨出第一步</h1>
+    <p>Vim 源自遠古時代的 Vi 編輯器，當時電腦圖形化介面、滑鼠還不普及，大家在電腦上工作就是用鍵盤，所以 Vim 最主要的一個使用概念就是「模式」切換，將文件管理、指令、文字輸入……等等，分開處理。<br>對於用習慣滑鼠的現代人來說，不用按滑鼠，完全用打鍵盤來處理文字的 Vim 其實是很新奇的，而且真正習慣之後會發現，文件編輯的速度更快，右手也不會因為一直要去抓滑鼠而覺得痠痛，打字的時候基本只需要移動手指，幾乎不會動到手腕，搭配電腦系統各種快速鍵，真的好用！<br>只是想要直接離開 Vim 然後也不想讀這篇文章的話，<code>:q!</code> 打下去就對了。珍重再見！</p>
+<h2 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h2><p>Vim總共有12種模式，最基本也最常見到的是以下三種：<br>（從 2018 年 5 月 18 日，Vim 8.1 釋出之後，因為加入了 terminal 的功能，所以現在總共有 14 種模式了……）</p>
+<ol>
+<li>一般模式（Normal mode）：進入Vim時的預設模式，可以進行文件編輯但無法輸入文字。</li>
+<li>插入模式（Insert mode）：可以在Vim中輸入文字的模式。<br>也有人翻成「編輯模式」我自已覺得翻成「輸入模式」比較好一點，因為在一般模式裡也可以編輯文檔，阿「插入」是要插什麼入？但是大部分中文翻譯的文章都是翻成，官網上連結的中文手冊也是翻成「插入」，所以我就按慣例使用吧！</li>
+<li>命令模式（Command-line mode）:可輸入指令，如：開啟文件、查看幫助文件、關閉Vim、設定環境……等等。</li>
+</ol>
+<h3 id="「插入模式」與「一般模式」"><a href="#「插入模式」與「一般模式」" class="headerlink" title="「插入模式」與「一般模式」"></a>「插入模式」與「一般模式」</h3><p>一進入 Vim 我們是身處「一般模式」中的，想要「插入」一些東西當然要要先進入插入模式，要隆重介紹第一個指令出場了！   </p>
+<p><code>i</code> ：進入插入（insert）模式  </p>
+<p>這樣我們就可以在 Vim 裡面打字了，打到一個段落，你不想再「插入」任何東西了，你文字編輯完成了，想要拍拍屁股走人，或是把檔案存下來，待在「插入模式」中你只能一直「插入」（好啦……輸入），其它事都不能做，所以還必須先學會怎麼離開「插入模式」回到「一般模式」，要鼓掌歡迎第二個指令出場了！（嗯……是不是每個指令都一定得這樣）  </p>
+<p><code>Esc 鍵</code>：退出插入模式  </p>
+<p>對，按下 <code>Esc 鍵</code>，就離開插入模式回到一般模式了！有東西忘了輸入還想再輸入的話，再按下 <code>i</code> 又可以再次輸入了!<br>那剛剛不是說打字只要動指頭不用動手腕，這樣每次要從插入模式切到一般模式的時候手就要往左上方找Esc鍵做拉筋練習是怎樣？<br>其實只是因為 <code>Esc 鍵</code> 比較直覺，所以先跟大家介紹，其實 <code>Esc 鍵</code> 可以用 <code>Ctrl+c</code> 代替，<code>Ctrl+c</code> 在 Vim 裡不是一般用於「複製」的快速鍵，它被用來「退出」插入模式，其實就是Linux命令列中的「退出」快速鍵, 之後學到其它模式要「退出」時也可以用。   </p>
+<p><code>Ctrl + c</code>：退出  </p>
+<h3 id="慢步「一般模式」"><a href="#慢步「一般模式」" class="headerlink" title="慢步「一般模式」"></a>慢步「一般模式」</h3><p>雖然右下方的方向鍵在 Vim 功能一如往常，但是科技始終來自於惰性，所以對於一個「基客」而言，世上最遙遠的距離，不是生與死的距離，而是右手從 <code>h j k l</code> 移到方向鍵的距離！（甚至很多人還建議把上下左右鍵設定為不可用，強迫大家一定要用 <code>h j k l</code>，這其實就有點超過了。）<br>在 Vim 中 <code>h j k l</code> 被用來取代方向鍵，差異僅在毫秒之間，但是爽度大大提升！<br>當然，因為我們現在連門都還沒入，<code>h j k l</code> 就已經夠讓我們頭暈目炫，之後學會其它瞬間移動的指令像是 <code>G</code>、<code>0</code>、<code>$</code>……等等，<code>h j k l</code> 也就變成只是輔助的功能了。  </p>
+<p><code>h</code>：左<br><code>j</code>：下<br><code>k</code>：上<br><code>l</code>：右  </p>
+<h3 id="進入「命令模式」"><a href="#進入「命令模式」" class="headerlink" title="進入「命令模式」"></a>進入「命令模式」</h3><p>現在咱們會插入、退出、插入、再退出了，可以在插入模式中打字了，也可以在一般模式中行動自如了，但是還是處於掰咖半殘的狀態，沒辦法存檔、沒辦法開啟另一個檔案，想要閃人的時候也沒辦法退出，所以進入「命令模式」也是Vim基礎中的基礎！又要再一次隆重的介紹未來在你Vim人生中將被按下億萬次的按鍵出場啦！  </p>
+<p><code>:</code>：進入命令模式  </p>
+<p>就是這個簡單的「冒號」讓我們可以對Vim下命令。<br>想要離開Vim嗎?</p>
+<p><code>:q</code>：退出(quit)  </p>
+<p>想要存檔嗎?  </p>
+<p><code>:w</code>：寫入&#x2F;存檔(write)  </p>
+<p>想要把它當奴隸一樣強迫他做事情嗎?  </p>
+<p><code>!</code>：強制命令  </p>
+<p>強制命令可在任意指令後加入，例如：  </p>
+<p><code>:q!</code>：強制退出<br><code>:wq!</code>：強制存檔並退出  </p>
+<h3 id="恭喜您！右腳小指已伸入-Vim-大門"><a href="#恭喜您！右腳小指已伸入-Vim-大門" class="headerlink" title="恭喜您！右腳小指已伸入 Vim 大門"></a>恭喜您！右腳小指已伸入 Vim 大門</h3><p>幾個讓你能在Vim裡生存的指令，讓你的右腳小指伸入 Vim 大門，都已經這麼努力的伸了一隻小指，就繼續努力吧！ 這隻小指能做的事也已經足夠讓你直著進去，至少不必橫著出來了（通常這時候用完VIM都還是會有一種遍體鱗傷的感覺）。<br>在繼續努力之前，先復習一下你這隻小指能做些什麼偉大的事情吧:  </p>
+<p><code>i</code>：進入插入（insert）模式<br><code>Ctrl+c</code>：退出插入模式，退出其它模式<br><code>h</code>：左<br><code>j</code>：下<br><code>k</code>：上<br><code>l</code>：右<br><code>:</code>：進入命令模式<br><code>:q</code>：退出（quit）<br><code>:w</code>：寫入&#x2F;存檔（write）<br><code>!</code>：強制命令  </p>
+<p>Vim 的世界很有趣的，咱們下回見……  </p>
+
+    <hr>
+    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/" rel="tag">Vim</a></li></ul>
+    
+    
+</div>
+</div>
+
+
+    </div>
+
+    
+        <section id="comments">
+    <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'JAS0NHUANG';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+    
+    
+    <!--footer-->
+    <footer class="blog_footer">
+    <p>
+        JAS0N HUANG
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+            <img src="/images/cc.svg" alt="CC" height="16"></a>
+        2019
+    </p>
+    
+</footer>
+
+  </body>
+</html>

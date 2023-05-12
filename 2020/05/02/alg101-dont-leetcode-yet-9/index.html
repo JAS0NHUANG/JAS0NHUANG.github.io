@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <!--head-->
+    <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MC9CSTSNW6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MC9CSTSNW6');
+    </script>
+
+    <title>JAS0N HUANG</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="DoQOqkvX376V4rp4mmeGYFGrLOB-wrUCMMKlqgrqmuQ" />
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+    <script type="text/javascript">
+        let apiUrl = 'https://www.googleapis.com/youtube/v3/channels?part=snippet&id=UC9ckyA_A3MfXUa0ttxMoIZw&key=AIzaSyBiuF1WCpG7TaCY8xtd4cb73Sn-5NTPrb0'
+        let xhr = new XMLHttpRequest()
+        xhr.open('get', apiUrl, true)
+        xhr.send()
+
+        xhr.onreadystatechange = function(){
+            if(this.readyState ===4 && this.status === 200){
+                let data = JSON.parse(this.responseText)
+                console.log(data)
+            }
+        }
+    </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+  <body>
+
+    
+    <div class="container">
+        <div class="blog_header">
+    <a href="/">
+        <h1 class="blog_title">
+        <img src="/images/Jas0nhuang.svg" alt="jas0nhuang">
+        <!-- %= config.title %-->
+        </h1>
+    </a>
+
+    <div class="container">
+        <nav class="blog_nav">
+            
+                <a class="menu_item" href="/archives">文章</a>
+            
+                <a class="menu_item" href="/tags">標籤</a>
+            
+                <a class="menu_item" href="/about">關於</a>
+            
+                <a class="menu_item" href="/atom.xml">RSS</a>
+            
+        </nav>
+    </div>
+</div>
+
+    </div>
+    
+
+    
+    <div class="body">
+    <div class="main">
+<div class="full">
+    <h1 class="page_title">Don&#39;t LeetCode Yet - 9 - Data Structure Intro</h1>
+    <h2 id="Importance-of-Data-Structure"><a href="#Importance-of-Data-Structure" class="headerlink" title="Importance of Data Structure"></a>Importance of Data Structure</h2><p>How important is Data Structure? VERY IMPORTANT!<br>Different scinario needs different data structure.</p>
+<p>Array in JavaScript is more than array.<br>JavaScript just made it too convinent with array, object…etc.<br>Like: .push,  .pop,  .shift,  .unshift… method in array.<br>It behaves more like queue or stack (STEAK XD)</p>
+<p>Object in JavaScript can be used as map.</p>
+<p>Some common data structures:</p>
+<ul>
+<li>Linked list</li>
+<li>Queue</li>
+<li>Stack</li>
+<li>Hash Table</li>
+<li>Tree</li>
+</ul>
+<h3 id="Take-SET-as-example"><a href="#Take-SET-as-example" class="headerlink" title="Take SET [] as example"></a>Take SET [] as example</h3><ol>
+<li>push</li>
+<li>remove</li>
+<li>isExist</li>
+</ol>
+<p>Definition of SET data structure: One element can only appear once.(unique values)<br>Throw 1 1 2 2 3 3 4 into a SET, we can get 1 2 3 4</p>
+<h3 id="Queue-VS-Array"><a href="#Queue-VS-Array" class="headerlink" title="Queue VS Array"></a>Queue VS Array</h3><p>queue.enqueue<br>queue.front<br>queue.dequeue</p>
+<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><h3 id="different-Sorting-Algorithm"><a href="#different-Sorting-Algorithm" class="headerlink" title="different Sorting Algorithm"></a>different Sorting Algorithm</h3><p>Bubble sort, Merge sort, Selection sort, Insertion sort, </p>
+<p><a target="_blank" rel="noopener" href="https://lidemy.com/courses/389485/lectures/5943009">Lidemy-排序方式簡介</a><br><a target="_blank" rel="noopener" href="https://visualgo.net/">VISUALGO</a>: Nice visualising site.</p>
+<h3 id="LIOJ-1035"><a href="#LIOJ-1035" class="headerlink" title="LIOJ 1035"></a>LIOJ 1035</h3><p>Since the range is numbers from 1 to 100, we can make an array of 100 0s (index[0]- index[99])<br>And +1 on that index every times a number has been found.<br>Array &#x3D; [1,4,4,3,4] &gt;  zeroArray &#x3D; [0,0,0,0,0,0,0…..]<br>zeroArray &#x3D; [1, 0, 1, 3, 0, 0, 0, 0…..]<br>output &#x3D; [1, 3, 4, 4, 4,]</p>
+<p>Counting sort</p>
+<h3 id="LIOJ-1047"><a href="#LIOJ-1047" class="headerlink" title="LIOJ 1047"></a>LIOJ 1047</h3><p>binary search</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">let L = 0</span><br><span class="line">let R = arr.length-1</span><br><span class="line">let M = Math.floor(arr.length/2)</span><br><span class="line">if(q &gt; arr[R] || q &lt; arr[L])&#123;</span><br><span class="line">    return -1</span><br><span class="line">&#125;</span><br><span class="line">while(end - start &gt; 1)&#123;</span><br><span class="line">    if(q==arr[L])&#123;</span><br><span class="line">        return L</span><br><span class="line">    &#125; else if (q== arr[R])&#123;</span><br><span class="line">        return R</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        if(q==arr[M])&#123;</span><br><span class="line">            return M</span><br><span class="line">        &#125; else if (q &lt; arr[M])&#123;</span><br><span class="line">            R = M</span><br><span class="line">            M = Math.floor((L+M)/2)</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            L = M</span><br><span class="line">            M = Math.floor((M+R)/2)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">return -1</span><br></pre></td></tr></table></figure>
+
+<h3 id="LIOJ-1048"><a href="#LIOJ-1048" class="headerlink" title="LIOJ 1048"></a>LIOJ 1048</h3><p>If all numbers are positive there will not be any problem.<br>Here we can just loop thorugh the array, add all the numbers already passed.<br>If the sum of X ~ (Y-1) is smaller than Y, then we can ditch the sum of X ~ Y-1.<br>It actually means if X add to Y-1 is negative…<br>Rather than writing this:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if (arr[i]+currentSum &gt; arr[i])&#123;</span><br><span class="line">    currentSum += arr[i]</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    currentSum = arr[i]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>This might be easier to understand?</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if(currentSum &lt; 0)&#123;</span><br><span class="line">    currentSum = arr[i]</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    currentSum += arr[i]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    <hr>
+    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/" rel="tag">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lidemy/" rel="tag">Lidemy</a></li></ul>
+    
+    
+</div>
+</div>
+
+
+    </div>
+
+    
+        <section id="comments">
+    <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'JAS0NHUANG';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+    
+    
+    <!--footer-->
+    <footer class="blog_footer">
+    <p>
+        JAS0N HUANG
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+            <img src="/images/cc.svg" alt="CC" height="16"></a>
+        2019
+    </p>
+    
+</footer>
+
+  </body>
+</html>

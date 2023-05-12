@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+    <!--head-->
+    <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MC9CSTSNW6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MC9CSTSNW6');
+    </script>
+
+    <title>JAS0N HUANG</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="DoQOqkvX376V4rp4mmeGYFGrLOB-wrUCMMKlqgrqmuQ" />
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+    <script type="text/javascript">
+        let apiUrl = 'https://www.googleapis.com/youtube/v3/channels?part=snippet&id=UC9ckyA_A3MfXUa0ttxMoIZw&key=AIzaSyBiuF1WCpG7TaCY8xtd4cb73Sn-5NTPrb0'
+        let xhr = new XMLHttpRequest()
+        xhr.open('get', apiUrl, true)
+        xhr.send()
+
+        xhr.onreadystatechange = function(){
+            if(this.readyState ===4 && this.status === 200){
+                let data = JSON.parse(this.responseText)
+                console.log(data)
+            }
+        }
+    </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+  <body>
+
+    
+    <div class="container">
+        <div class="blog_header">
+    <a href="/">
+        <h1 class="blog_title">
+        <img src="/images/Jas0nhuang.svg" alt="jas0nhuang">
+        <!-- %= config.title %-->
+        </h1>
+    </a>
+
+    <div class="container">
+        <nav class="blog_nav">
+            
+                <a class="menu_item" href="/archives">文章</a>
+            
+                <a class="menu_item" href="/tags">標籤</a>
+            
+                <a class="menu_item" href="/about">關於</a>
+            
+                <a class="menu_item" href="/atom.xml">RSS</a>
+            
+        </nav>
+    </div>
+</div>
+
+    </div>
+    
+
+    
+    <div class="body">
+    <div class="main">
+<div class="full">
+    <h1 class="page_title">Learn JavaScript Properly 1-2 Data and Variables</h1>
+    <h1 id="Beginning-Javascript-Ch-2"><a href="#Beginning-Javascript-Ch-2" class="headerlink" title="Beginning Javascript Ch.2"></a>Beginning Javascript Ch.2</h1><h2 id="Data-Types-and-Variables"><a href="#Data-Types-and-Variables" class="headerlink" title="Data Types and Variables"></a>Data Types and Variables</h2><p>Information&#x2F;Data comes in all sorts of forms : numbers, text, dates, times…etc.  </p>
+<ol>
+<li>Data types.</li>
+<li>How to store data (variable).</li>
+<li>How to manipulate and process the data.</li>
+</ol>
+<h2 id="Types-of-Data"><a href="#Types-of-Data" class="headerlink" title="Types of Data"></a>Types of Data</h2><ul>
+<li>Real world data like : numbers, texts…</li>
+<li>programing data like : object (will look deeper in Chapter 4.).</li>
+</ul>
+<p>strongly typed language vs weekly typed language<br>In JavaScript we don’t need to specify type when dealing with data.<br>But we still need to know about data types in case it wents wrong.<br>And it also helps to use data effectively.  </p>
+<h2 id="Most-commonly-used-data-types"><a href="#Most-commonly-used-data-types" class="headerlink" title="Most commonly used data types"></a>Most commonly used data types</h2><ul>
+<li><p><strong>Numerical Data</strong><br><em>integer</em> : whole numbers like 999, 7…<br><em>floating-point</em> : fractional numbers such as 3.1415…<br>(they are used as is).</p>
+</li>
+<li><p><strong>Text Data</strong><br><em>string</em> : one or more charaters of text.<br>(it’s marked by surrounded <code>&quot;</code>.ex: <code>&quot;Here are some texts.&quot;</code>)<br>escape character <code>\</code> to print out special characters.<br>Some examples:</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>escape sequence</th>
+<th>Character Represented</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\b</td>
+<td>Backspace</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>Form feed</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>New line</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>Carriage return</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>Tab</td>
+</tr>
+<tr>
+<td>\‘</td>
+<td>Single quote</td>
+</tr>
+<tr>
+<td>\“</td>
+<td>Double quote</td>
+</tr>
+<tr>
+<td>\\</td>
+<td>Backslash</td>
+</tr>
+<tr>
+<td>\xNN</td>
+<td>NN is a hexadecimal number that identifies a latin-1 special character</td>
+</tr>
+</tbody></table>
+<p>For instance if you want to type a copyright symble ©, you will have to put <code>\xA9</code> into the JavaScript code.  </p>
+<ul>
+<li><strong>Boolean Data</strong><br>Yes or No, positive or negative, true or false, 1 or 0.<br><em>true</em> for yes, <em>false</em> for no.<br>(Boolen is named after its inventor George Boole!)<br>It is to give the program decision-making abilities.</li>
+</ul>
+<h2 id="Variables-storing-data-in-memory"><a href="#Variables-storing-data-in-memory" class="headerlink" title="Variables - storing data in memory"></a>Variables - storing data in memory</h2><ul>
+<li>we want to store permanent datas in a <em>database</em>. And those temporary, altered, varied datas will be store in <em>variable</em>.</li>
+<li>the <em>variable</em> will be stored in the computer’s memory, whitch is much much faster then in the <em>database</em>.</li>
+<li>variable nameing rules:<br>1.It’s case sensitive.<br>2.Can’t use <em>reserved</em> words : <code>var</code>, <code>with</code>…etc.<br>3.Can’t use certain characters : <code>&amp;</code>, <code>%</code>…etc.<br>4.Can’t start with numbers : <code>99kids</code>, <code>101building</code>…etc. But numbers can appear in other places, such as : <code>kids99</code>, <code>building101</code>.</li>
+</ul>
+<h2 id="Variable-declaration-and-Value-association"><a href="#Variable-declaration-and-Value-association" class="headerlink" title="Variable declaration and Value association"></a>Variable declaration and Value association</h2><ul>
+<li>declare a variable by writing:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var newVariable;</span><br></pre></td></tr></table></figure></li>
+<li>assigne a value to it by doing:(the equal sign <code>=</code> is called an <em>assignment operator</em>)<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">newVariable = 999999;</span><br></pre></td></tr></table></figure></li>
+<li>A real time example:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var newVariable;</span><br><span class="line">    alert(newVariable);</span><br><span class="line"></span><br><span class="line">    newVariable = &quot;Hey&quot;;</span><br><span class="line">    alert(newVariable);</span><br><span class="line"></span><br><span class="line">    newVariable = 987654321;</span><br><span class="line">    alert(newVariable);</span><br><span class="line">    &lt;/script&gt;    </span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></li>
+<li>since JS is weekly typed language, variable can switch type whenever you want it to be.</li>
+<li>note that when trying to alert the variable without assignment, it prints out <em>undefined</em>, whitch is a primitive value in JS. And it can be compared, such as checking if the variable is assigned or not.</li>
+</ul>
+<h2 id="Assigning-Variables-with-the-value-of-other-variables"><a href="#Assigning-Variables-with-the-value-of-other-variables" class="headerlink" title="Assigning Variables with the value of other variables"></a>Assigning Variables with the value of other variables</h2><ul>
+<li><p>Not only can we assigne numbers or strings, but we can also assigne the value of other variables.ex:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var variable1;</span><br><span class="line">var variable2;</span><br><span class="line">variable1 = 390;</span><br><span class="line">variable2 = variable1;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>A more complex example:</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var string1 = &quot;this&quot;;</span><br><span class="line">var string2 = &quot;that&quot;;</span><br><span class="line">alert(string1);</span><br><span class="line">alert(string2);</span><br><span class="line"></span><br><span class="line">string2 = string1;</span><br><span class="line">alert(string1);</span><br><span class="line">alert(string2);</span><br><span class="line"></span><br><span class="line">string1 = &quot;another&quot;;</span><br><span class="line">alert(string1);</span><br><span class="line">alert(string2);</span><br></pre></td></tr></table></figure>
+<p>(note that in the last block even the “string1” been reassigne to another value. the “string2” remains the same as it just copied the value from the former “string1” value. It’s not always the case but generaly “basic data types” like numbers or strings are always copied when assigned. And for more complex data types like <em>object</em>, the value is shared.)<br>ex:  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var string = &quot;hello&quot;;</span><br><span class="line">var string1 = string;</span><br><span class="line">var string2 = string;</span><br><span class="line">var string3 = string;</span><br><span class="line">// changing any of the variable won&#x27;t effect others.</span><br><span class="line"></span><br><span class="line">var object = someFunction();</span><br><span class="line">var object1 = object;</span><br><span class="line">var object2 = object;</span><br><span class="line">var object3 = object;</span><br><span class="line">// changing any of the variale will effect all. Because they share the same function().</span><br></pre></td></tr></table></figure>
+<h2 id="Using-Data-Calculations-and-String-Manipulation"><a href="#Using-Data-Calculations-and-String-Manipulation" class="headerlink" title="Using Data - Calculations and String Manipulation"></a>Using Data - Calculations and String Manipulation</h2><p>Why using variables?<br>Store variables in memory, then calculate or processe it latter.<br>Here we are going to talk about some “number-crunching” and “text operation” with variables.  </p>
+<h3 id="Numerical-Calculation"><a href="#Numerical-Calculation" class="headerlink" title="Numerical Calculation"></a>Numerical Calculation</h3><p>operators : addition <code>+</code>, subtraction <code>-</code>, multiplication <code>*</code>, division <code>/</code>.<br>It’s normaly better to put numbers into variables and do the calculation using variables.</p>
+<p><strong>Increment and Decrement operators.</strong><br><code>++</code> for increment, <code>--</code> for decrement.  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var thisNum = 0;</span><br><span class="line">thisNum = thisNum + 1;</span><br><span class="line">thisNum++;</span><br><span class="line">++thisNum;</span><br></pre></td></tr></table></figure>
+<p>Three lines give the same result(store 1 to “thisNum”), since the <code>++</code> operator is used alone.</p>
+<p>BUT when <code>++</code> and <code>--</code> utilize with other operators, the placement becomes effective. Ex:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var thisNum = 1;</span><br><span class="line">var thisVar = thisNum++ \* 20;</span><br><span class="line">alert(thisVar);</span><br><span class="line">alert(thisNum);</span><br></pre></td></tr></table></figure>
+<p>First do thisNum * 20, store it to thisVar.<br>Then do thisNum + 1, store it to thisNum.<br>So the first alert gives 20, and the second alert gives 2.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var thisNum = 1;</span><br><span class="line">thisVar = ++thisNum \* 20;</span><br><span class="line">alert(thisVar);</span><br><span class="line">alert(thisNum);</span><br></pre></td></tr></table></figure>
+<p>Frist do “thisNum” + 1 then * 20, store the result to “thisVar”.<br>Also store “thisNum” + 1 to “thisNum”.<br>So the first alert gives 40, and the second gives 2.<br><em>VERY DIFFERENT HERE</em></p>
+<p>Some MORE complex example:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var thisNum = 1;</span><br><span class="line">var thisVar = (thisNum++ \* 10 + 2);</span><br><span class="line">// 1. &quot;thisNum&quot; \* 10 + 2 = 12, store it to &quot;thisVar&quot;.</span><br><span class="line">// 2. &quot;thisNum&quot; + 1 = 2, store it to &quot;thisNum&quot;.</span><br><span class="line">thisVar = (++thisNum \* 10 + 2);</span><br><span class="line">// 1. (&quot;thisNum&quot; + 1) \* 10 + 2 = 22, store it to &quot;thisVar&quot;.</span><br><span class="line">// 2. &quot;thisNum&quot; + 1 = 2, store it to &quot;thisNum&quot;.</span><br></pre></td></tr></table></figure>
+
+<p><em>A HUGE ERROR at p.30 in the book. Where the author said the value of “thisNum” in the first two lines is going to be 12.</em></p>
+<p><em>Actually with such subtlety, it can lead to bugs and security problems. So it’s usually better to AVOID this syntax. so…</em></p>
+<blockquote>
+<p>DON’T USE <code>++</code> AND <code>--</code> IN JAVASCRIPT.  </p>
+</blockquote>
+<p>(also disscused in the YUI video of Crockford : Crockford on Javascript - part5 the end of all things. 1:09’00”.)</p>
+<p>A good alternative for <code>++</code> or <code>--</code> is to use <code>+=</code> operator. Resons that it’s better:  </p>
+<ol>
+<li>Simple behavior makes no ambiguity.</li>
+<li>Can be used not only for <code>+</code> and <code>-</code>, but also for <code>*</code>, and <code>/</code>. Ex: <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var thisNum * = 20;</span><br><span class="line">// means thisNum = thisNum * 20;</span><br></pre></td></tr></table></figure></li>
+<li>Can be used to other numbers then “1”.</li>
+</ol>
+<p>The “operator precedence” works as in mathmatics. First <code>*</code> <code>/</code> then <code>+</code> <code>-</code>.</p>
+<p><strong>Try to make an “EURO to NTD” converter.</strong>  </p>
+<p>Using <code>prompt()</code> function to get data from user input. It’s like an <code>alert()</code> with an input box.<br><code>prompt()</code> function can take two arguments in respective order: </p>
+<ol>
+<li>Text to be displayed.</li>
+<li>The default value contained in the input box.</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;EURO to NTD&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">        // A simple EURO to NTD converter.</span><br><span class="line">        var exRate = prompt(&quot;Exchange rate is:&quot;, 35);</span><br><span class="line">        var amountEuro = prompt(&quot;Amount in Euro:&quot;, 1000);</span><br><span class="line">        var exEuroToNtd;</span><br><span class="line"></span><br><span class="line">        exEuroToNtd = exRate * amountEuro;</span><br><span class="line">        alert(exEuroToNtd);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>And a “BMI Calculator”!!</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;BMI Calculator&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">        // BMI = weihght(kg) / (height(m) * height(m)).</span><br><span class="line">        var yourWeight = prompt(&quot;Your weight is (in KG):&quot;, 55);</span><br><span class="line">        var yourHeight = prompt(&quot;Your height is (in m):&quot;, 1.7);</span><br><span class="line">        var yourBMI;</span><br><span class="line"></span><br><span class="line">        yourBMI = yourWeight / (yourHeight * yourHeight);</span><br><span class="line">        alert(yourBMI);</span><br><span class="line">        if(yourBMI &gt; 25) &#123;</span><br><span class="line">            alert(&quot;You are overweight!&quot;);</span><br><span class="line">        &#125; else if(yourBMI &lt; 18)&#123;</span><br><span class="line">            alert(&quot;You are underweight!&quot;);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            alert(&quot;You have a nice body!!!&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>No checking of data input here, so you can enter whatever you want, such as “abc” instead of numbers. We will learn about data validation latter.</strong></p>
+<h3 id="Basic-String-Operations-Concatenation"><a href="#Basic-String-Operations-Concatenation" class="headerlink" title="Basic String Operations - Concatenation"></a>Basic String Operations - Concatenation</h3><p>Join two strings to make one string by using <code>+</code> operator.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var myFullName = &quot;Jibai&quot;+ &quot; &quot; + &quot;Gao&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>(Mush put a white space in it or it will print out “JibaiGao”, instead of “Jibai Gao”.)<br>Another simple Web Page example:  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html &gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;concatenation example&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        var yourFirstN = prompt(&quot;Your first name:&quot;);</span><br><span class="line">        var yourLastN = prompt(&quot;Your last name:&quot;);</span><br><span class="line">        var yourFullN = yourFirstN + &quot; &quot; + yourLastN;</span><br><span class="line">        var greetingString = &quot;Hello&quot;;</span><br><span class="line">        var concatString;</span><br><span class="line">        </span><br><span class="line">        document.write(greetingString + &quot; &quot; + yourFullN + &quot;!&quot; + &quot;&lt;br&gt;&quot;);</span><br><span class="line"></span><br><span class="line">        concatString = greetingString + &quot; &quot; + yourFullN + &quot;!&quot;;</span><br><span class="line"></span><br><span class="line">        document.write(concatString);</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;    </span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>This above is some concatenation example and how to use <code>document.write()</code> function to write data into (html) document.  </p>
+<h3 id="Mixing-Numbers-and-Strings"><a href="#Mixing-Numbers-and-Strings" class="headerlink" title="Mixing Numbers and Strings"></a>Mixing Numbers and Strings</h3><p>Just use <code>+</code> to add them together.<br>When Numbers mix with Strings, JS will just convert the numbers into strings and make a “string concatenation”.   </p>
+<p>Write following line in the “BMI Calculator” to make it clearer and more user friendly.</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">document.write(&quot;Your BMI = &quot; + yourWeight + &quot; / &quot; + yourHeight + &quot;\xB2 = &quot; +  yourBMI);</span><br></pre></td></tr></table></figure>
+<p>This will print out (with default values) “Your BMI &#x3D; 55 &#x2F; 1.7² &#x3D; 19.031141868512112” on the web page.  </p>
+<p>(Will learn more in depth in Chapter 5 and 6.)  </p>
+<h2 id="Data-Type-Conversion"><a href="#Data-Type-Conversion" class="headerlink" title="Data Type Conversion"></a>Data Type Conversion</h2><p>It’s important since numbers, strings and mix of both are behaved differently.<br><code>&quot;22&quot; + &quot;11&quot;</code> result in 2211(treated like strings),  <code>22 + 11</code> result in 33(as numbers).<br>Some interesting behavior here:<br><code>1 + 2 + &quot;abc&quot;</code> will give <code>3abc</code>.<br><code>&quot;abc&quot; + 1 + 2</code> will give <code>abc12</code>.<br><code>&quot;abc&quot; + 1 / 2</code> will give <code>abc0.5</code>.<br><code>&quot;abc&quot; + 1 - 2</code> will give a <code>NaN</code>(Not a Number).</p>
+<p>Two conversion fuctions to convert strings to numbers: <code>parseInt()</code> and <code>parseFloat()</code>.<br>Why the name “parse” rather then “convertTo”? Because it just “parse”(analize&#x2F; goes through…) the argument given, check if it’s a valid number, then build the number that it gets or just stop the work.<br>Ex: <code>parseInt(&quot;123&quot;)</code> this will give 123 as a number.<br><code>parseInt(&quot;123abc&quot;)</code> also gives number 123.<br>&#96;parseInt(“123abc456”) it takes only the first numerical part of the string. So it gives number 123 too.<br>Note that if you put a real “string” as argument(or the argument start’s with strings), it will give “NaN”, as result.  </p>
+<p>Example:  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var theString = &quot;59.98 degrees&quot;;</span><br><span class="line">var thisInt;</span><br><span class="line">var thisFloat;</span><br><span class="line"></span><br><span class="line">thisInt = parseInt(theString, 10);</span><br><span class="line">alert(theString + &quot; converted to Intenger　” + thisInt + &quot;&lt;br/&gt;&quot;)</span><br><span class="line"></span><br><span class="line">thisFloat = parseFloat(theString);</span><br><span class="line">alert(theString + &quot; converted to Float &quot; + thisFloat)</span><br></pre></td></tr></table></figure>
+
+<p>The 10 in the <code>parseInt()</code> function is called <strong>radix</strong>, it tells <code>parseInt()</code> to convert the number in decimal base. (2 for binary, 16 for hex…etc)<br>Ex: <code>parseInt(10, 2)</code> &#x3D;&#x3D;&#x3D; 101.<br><strong>SHOULD ALWAYS USE THE RADIX!!</strong><br><code>parseInt()</code> only prints out 59<br><code>parseFloat()</code> prints out 59.98<br>If passed in a “pure” string as argument , it gives “NaN”.<br>Nan is also a NUMBER, and it has it’s own function <code>isNaN()</code>. It’s used to check if the data is “NaN”.<br>Ex: <code>thisThing = isNaN(&quot;hello&quot;);</code> then “thisThing &#x3D; true”. It’s useful to varify user inputs.</p>
+<h2 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h2><ul>
+<li>Normal variable take only one value. An array can store more then one value.</li>
+<li>The order starts at “0”. Not “1”.</li>
+<li>To declare an array: <code>var thisArray = new Array();</code> (this is no more a good practice, now we do: <code>var thisArray=[];</code>.</li>
+<li>Two ways to pass data into array:</li>
+</ul>
+<ol>
+<li><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var thisArray = [&quot;jkl&quot;, 456, 908, &quot;yes&quot;];</span><br></pre></td></tr></table></figure>
+The value of thisArray[0] will be “jkl”, thisArray[2] will be “908”.  </li>
+<li><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var thisArray = [];</span><br><span class="line">thisArray[0] = &quot;jkl&quot;;</span><br><span class="line">thisArray[1] = 456;</span><br><span class="line">thisArray[2] = 908;</span><br><span class="line">thisArray[3] = &quot;yes&quot;;</span><br></pre></td></tr></table></figure>
+This gives the same result as 1.</li>
+</ol>
+<ul>
+<li>normaly 1st method is used to create and array if we already know what to put in. And the 2nd way is used if we dont know yet what to put in the array or we want to change a specific item inside an array.  </li>
+<li>When useing the 2nd way, items added dont need to be in order. We can also do:  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var thisArray = [];</span><br><span class="line">thisArray[999] = &quot;nine nine nine&quot;;</span><br><span class="line">thisArray[100] = 123;</span><br></pre></td></tr></table></figure>
+Other items in the array will be “undefined”.</li>
+</ul>
+<h3 id="Multi-Dimensional-Array"><a href="#Multi-Dimensional-Array" class="headerlink" title="Multi Dimensional Array"></a>Multi Dimensional Array</h3><ul>
+<li>Two dimensional array:</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var twoDArray = [];</span><br><span class="line"></span><br><span class="line">twoDArray[0] = [];</span><br><span class="line">twoDArray[0][0] = &quot;name1&quot;;</span><br><span class="line">twoDarray[0][1] = &quot;age1&quot;;</span><br><span class="line"></span><br><span class="line">twoDArray[1] = [];</span><br><span class="line">twoDArray[1][0] = &quot;name2&quot;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>It can have more dimentions follow the same syntax, but dont try to do to much!</li>
+</ul>
+
+    <hr>
+    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+    
+    
+</div>
+</div>
+
+
+    </div>
+
+    
+        <section id="comments">
+    <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'JAS0NHUANG';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+    
+    
+    <!--footer-->
+    <footer class="blog_footer">
+    <p>
+        JAS0N HUANG
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+            <img src="/images/cc.svg" alt="CC" height="16"></a>
+        2019
+    </p>
+    
+</footer>
+
+  </body>
+</html>

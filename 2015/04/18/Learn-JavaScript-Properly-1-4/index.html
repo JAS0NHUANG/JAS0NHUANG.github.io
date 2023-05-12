@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <!--head-->
+    <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MC9CSTSNW6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MC9CSTSNW6');
+    </script>
+
+    <title>JAS0N HUANG</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="DoQOqkvX376V4rp4mmeGYFGrLOB-wrUCMMKlqgrqmuQ" />
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+    <script type="text/javascript">
+        let apiUrl = 'https://www.googleapis.com/youtube/v3/channels?part=snippet&id=UC9ckyA_A3MfXUa0ttxMoIZw&key=AIzaSyBiuF1WCpG7TaCY8xtd4cb73Sn-5NTPrb0'
+        let xhr = new XMLHttpRequest()
+        xhr.open('get', apiUrl, true)
+        xhr.send()
+
+        xhr.onreadystatechange = function(){
+            if(this.readyState ===4 && this.status === 200){
+                let data = JSON.parse(this.responseText)
+                console.log(data)
+            }
+        }
+    </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+  <body>
+
+    
+    <div class="container">
+        <div class="blog_header">
+    <a href="/">
+        <h1 class="blog_title">
+        <img src="/images/Jas0nhuang.svg" alt="jas0nhuang">
+        <!-- %= config.title %-->
+        </h1>
+    </a>
+
+    <div class="container">
+        <nav class="blog_nav">
+            
+                <a class="menu_item" href="/archives">文章</a>
+            
+                <a class="menu_item" href="/tags">標籤</a>
+            
+                <a class="menu_item" href="/about">關於</a>
+            
+                <a class="menu_item" href="/atom.xml">RSS</a>
+            
+        </nav>
+    </div>
+</div>
+
+    </div>
+    
+
+    
+    <div class="body">
+    <div class="main">
+<div class="full">
+    <h1 class="page_title">Learn JavaScript Properly 1-4 Codecademy JS Track (A)</h1>
+    <h2 id="1-Getting-started-with-Programming"><a href="#1-Getting-started-with-Programming" class="headerlink" title="1. Getting started with Programming"></a>1. Getting started with Programming</h2><h3 id="REAL-BASIC"><a href="#REAL-BASIC" class="headerlink" title="REAL BASIC"></a>REAL BASIC</h3><ul>
+<li>type a string <code>&quot;NAME&quot;</code> and to know it’s “length” using <code>&quot;name&quot;.length</code>.</li>
+<li>basic math with <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>. </li>
+<li>write some comments with <code>//</code></li>
+<li>An “interactive” example : <code>confirm(&quot;Confirmation dialogue!&quot;);</code> (It pops up a confirmation box.)</li>
+<li>“Alert” user with <code>alert()</code>.(An alert box will pop up.)&lt;&lt;–better add this in.</li>
+<li>Ask user to input something : <code>prompt(&quot;What are you asking for?&quot;);</code>.(A box asking for input will pop up.).</li>
+<li>basic data types: “numbers”, “strings”, and “boolean”.</li>
+<li>print out things in console by : <code>console.log()</code></li>
+<li>print out data in web page document by :<code>document.write()</code> &lt;&lt;– learned it from elsewhere.</li>
+<li>comparison operators: <code>&gt;</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>===</code>, <code>!==</code>. (Careful, single <code>=</code> is for assignment of value, <code>==</code> or <code>===</code> is for comparison equal.)</li>
+</ul>
+<h3 id="Basic-logics"><a href="#Basic-logics" class="headerlink" title="Basic logics"></a>Basic logics</h3><ul>
+<li><code>if</code> statement.<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if(this)&#123;</span><br><span class="line">    console.log(&quot;that&quot;);</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    console.log(&quot;another thing&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>If this then print that in console. Otherwise print another thing in console.</p>
+<ul>
+<li>other than <code>console.log()</code> we can use <code>prompt()</code> or <code>alert()</code> or <code>confirm()</code> to make it interactive.</li>
+<li>Some more math an the precedence.( All works like in the school.)</li>
+<li>The “modulo” symbol: <code>%</code> will return the <strong>remainder</strong> of X devided by Y: <code>X % Y</code>.</li>
+<li>function <code>substring()</code> extract part of the string. Ex: <code>&quot;Jason HUANG&quot;.substring(2, 9)</code> will extract <code>&quot;son HUA&quot;</code> from the string.</li>
+</ul>
+<h3 id="Variables"><a href="#Variables" class="headerlink" title="Variables"></a>Variables</h3><ul>
+<li>Declaration:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var varName = data;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="A-Tiny-Game-Project"><a href="#A-Tiny-Game-Project" class="headerlink" title="A Tiny Game Project"></a>A Tiny Game Project</h3><ul>
+<li>First ask for confirmation: <code>confirm(&quot;Realy want to play?&#39;);</code></li>
+<li>Declear an “age” variable then assign to a “prompt()” function: <code>var age = prompt(&quot;What&#39;s your age?&quot;);</code></li>
+<li>Some <code>if</code>…<code>else</code> to check user’s age.</li>
+<li><code>console.log</code> some story line.</li>
+<li>Declare an “userAnswer” variable, and asigne it to a <code>prompt()</code> to ask for user to input.</li>
+<li>use <code>if</code>…<code>else</code> to check for the “userAnswer”. Print out different result for “yes” and others.</li>
+<li>Ask user to rate the app by 10 using <code>prompt()</code> function, and print out different result using <code>if</code>…<code>else</code>.</li>
+</ul>
+<h2 id="2-Functions"><a href="#2-Functions" class="headerlink" title="2. Functions"></a>2. Functions</h2><h3 id="Introducing-Functions"><a href="#Introducing-Functions" class="headerlink" title="Introducing Functions"></a>Introducing Functions</h3><ul>
+<li><p>“Function” is a series of instructions put together as a package, so that we can reuse it whenever we need it.</p>
+</li>
+<li><p>syntax to declare a function:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var functionName = function(ARGUMENT)&#123;</span><br><span class="line">    ACTION;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>also</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function functionName(ARGUMENT)&#123;</span><br><span class="line">    ACTION</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>But it’s better to always use the first method.(declare the var first!!).<br>to call this function use <code>functionName(ARGUMENT VALUE)</code>.<br>One brief example:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var calculate = function (number) &#123;</span><br><span class="line">    var val = number * 10;</span><br><span class="line">    console.log(val);</span><br><span class="line">&#125;</span><br><span class="line">calculate(20);</span><br></pre></td></tr></table></figure></li>
+<li><p>make it <code>return</code> a value:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function timesTwo(number)&#123;</span><br><span class="line">    return number * 2;</span><br><span class="line">&#125;</span><br><span class="line">//and then call it</span><br><span class="line">var calculatedNum = timesTwo(20);</span><br><span class="line">console.log(calculatedNum);</span><br></pre></td></tr></table></figure></li>
+<li><p>Combine with <code>if</code>…<code>else</code> statement:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function quarter(number)&#123;</span><br><span class="line">    return number/4;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var theNumber = prompt(&quot;put in a number&quot;, &quot; &quot;);</span><br><span class="line">if (quarter(theNumber) % 3 === 0)&#123;</span><br><span class="line">    console.log(&quot;TRUE&quot;);</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    console.log(&quot;FALSE&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>A function can take TWO (or more?) parameters. Ex: <code>function thisFunc(X, Y) &#123; ACTION &#125;</code></p>
+</li>
+</ul>
+<h3 id="SCOPE"><a href="#SCOPE" class="headerlink" title="SCOPE"></a>SCOPE</h3><ul>
+<li>“Global” vs “Local” variables.<br>“Outside” vs “Inside” of the function.</li>
+</ul>
+<h3 id="Build-“Rock-Paper-Scissors”"><a href="#Build-“Rock-Paper-Scissors”" class="headerlink" title="Build “Rock, Paper, Scissors”"></a>Build “Rock, Paper, Scissors”</h3><ul>
+<li>First ask for user’s choice:  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var userChoice = prompt(&quot;Do you choose rock, paper or scissors?&quot;);</span><br></pre></td></tr></table></figure></li>
+<li>Then mak computer chose randomly with <code>Math.random()</code>:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var computerChoice = Math.random();</span><br><span class="line">if (computerChoice &lt; 0.34) &#123;</span><br><span class="line">	computerChoice = &quot;rock&quot;;</span><br><span class="line">&#125; else if(computerChoice &lt;= 0.67) &#123;</span><br><span class="line">	computerChoice = &quot;paper&quot;;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">	computerChoice = &quot;scissors&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>Make the <code>compare()</code> function and it’s logic:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function compare(choice1, choice2) &#123;</span><br><span class="line">    if (choice1 === choice2) &#123;</span><br><span class="line">        return &quot;The result is a tie!&quot;;</span><br><span class="line">    &#125; else if (choice1 === &quot;rock&quot;) &#123;</span><br><span class="line">        if (choice2 === &quot;scissors&quot;)&#123;</span><br><span class="line">            return &quot;rock wins&quot;;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            return &quot;paper wins&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; else if (choice1 === &quot;paper&quot;) &#123;</span><br><span class="line">        if (choice2 === &quot;rock&quot;) &#123;</span><br><span class="line">            return &quot;paper wins&quot;;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            return &quot;scissors wins&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; else if (choice1 === &quot;scissors&quot;) &#123;</span><br><span class="line">        if (choice2 === &quot;paper&quot;) &#123;</span><br><span class="line">            return &quot;scissors wins&quot;;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            return &quot;rock wins&quot;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>Finaly call the function <code>compare()</code> with <code>userChoice, computerChoice</code> as parameters:<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">compare(userChoice, computerChoice);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>Think about some problems:</p>
+<ol>
+<li>How to varify if user puts in a valid choice?</li>
+<li>How to add another choice?</li>
+<li>How to ask players to rechose again when tied instead of just print out the result?</li>
+</ol>
+
+    <hr>
+    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Codecademy/" rel="tag">Codecademy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+    
+    
+</div>
+</div>
+
+
+    </div>
+
+    
+        <section id="comments">
+    <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'JAS0NHUANG';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+    
+    
+    <!--footer-->
+    <footer class="blog_footer">
+    <p>
+        JAS0N HUANG
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+            <img src="/images/cc.svg" alt="CC" height="16"></a>
+        2019
+    </p>
+    
+</footer>
+
+  </body>
+</html>
